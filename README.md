@@ -13,26 +13,13 @@ cd server
 pip install -r requirements.txt
 ```
 
-**Create a new encryption key and change it in the server/main.py and client/main.py (the FERNET_KEY variable).**
-
 In the client/main.py replace the IP variable with the IP of your server.
 
-#### **For Linux:**
+**Create a new encryption key and change it in the server/main.py and client/main.py (the FERNET_KEY variable).**
 
 ```
-echo -e "from cryptography.fernet import Fernet\nprint(Fernet.generate_key())" | python
+python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key())"
 ```
-
-#### **For Windows:**
-
-Create and run a new file with the code:
-
-```
-from cryptography.fernet import Fernet
-print(Fernet.generate_key())
-```
-
-Copy the output ^ and paste it into the FERNET_KEY variable (in server/main.py and client/main.py).
 
 ## Run:
 
